@@ -1,0 +1,6 @@
+{
+  "name": "component-name",
+  "version": "1.0.0",
+  "dependencies": ["viem", "wagmi"],
+  "chains": ["ethereum", "arbitrum"]
+}

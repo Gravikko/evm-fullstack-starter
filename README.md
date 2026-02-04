@@ -1,97 +1,80 @@
-# Ultimate dApp Scaffold
+# Web3 Component Bundle
 
-> Generate production-ready Web3 projects in seconds, not hours.
+Generated Web3 components ready to use.
 
-A web-based generator for fullstack dApp boilerplates with smart contracts, frontend, and cross-chain support.
+## What's Inside
 
-## Features
+Depending on your selection, this bundle may include:
 
-**Template Types**
-- ERC-20 Token
-- NFT Collection (ERC-721/1155)
-- Staking Platform
-- DAO Governance
-
-**Cross-Chain (Unique)**
-- LayerZero V2 OFT - Omnichain tokens
-- Chainlink CCIP - Cross-chain messaging
-- Wormhole - EVM to Solana bridge
-
-**Tooling Options**
-- Foundry or Hardhat
-- OpenZeppelin / Solady
-- Upgradeable (Proxy) support
-
-**Frontend Stack**
-- Next.js 14 + TypeScript
-- Wagmi v2 + Viem + RainbowKit
-- GlassUI - Custom design system (Black/Purple + Liquid Glass)
-
-**AI-Powered**
-- Auto-generated README
-- "Explain Code" feature
+- `wallet-connect/` - RainbowKit wallet integration
+- `component-template/` - Generic web3 component template
+- `my-app/` - Main application
 
 ## Quick Start
 
+### 1. Wallet Connect Component
+
 ```bash
-# Clone
-git clone https://github.com/your-username/ultimate-dapp-scaffold.git
-cd ultimate-dapp-scaffold
-
-# Install
-pnpm install
-
-# Dev
-pnpm dev
+cd wallet-connect/
+npm install
+npm run dev
 ```
 
-## Generated Project Structure
+**Setup:** Add WalletConnect Project ID to `lib/config.ts` (get from https://cloud.walletconnect.com)
 
+**Features:** RainbowKit + Wagmi, fixed header with connect button
+
+---
+
+### 2. Component Template
+
+```bash
+cd component-template/
+
+# Delete what you don't need
+rm -rf contracts/   # if no smart contracts
+rm -rf frontend/    # if no frontend
+
+# Run frontend
+cd frontend/
+npm install
+npm run dev
+
+# OR run contracts
+cd contracts/
+forge build
+forge test
 ```
-my-dapp/
-├── contracts/           # Solidity + Foundry/Hardhat
-│   ├── src/
-│   ├── test/
-│   └── script/
-├── frontend/            # Next.js + GlassUI
-│   ├── src/
-│   │   ├── app/
-│   │   ├── components/ui/
-│   │   └── hooks/
-│   └── package.json
-└── README.md
+
+**Structure:**
+- `frontend/` - Next.js standalone app
+- `contracts/` - Foundry standalone contracts
+
+---
+
+### 3. Main App
+
+```bash
+cd my-app/
+npm install
+npm run dev
 ```
+
+## Integration
+
+Copy components into your main project:
+
+```bash
+# Example: Add wallet-connect to main app
+cp -r wallet-connect/app/providers.tsx my-app/src/
+cp -r wallet-connect/lib/config.ts my-app/src/lib/
+```
+
+Or use standalone.
 
 ## Tech Stack
 
-| Layer | Technology |
-|-------|------------|
-| Contracts | Solidity 0.8.x, Foundry, OpenZeppelin |
-| Frontend | Next.js 14, TypeScript, Tailwind CSS |
-| Web3 | Wagmi v2, Viem, RainbowKit |
-| Cross-Chain | LayerZero, Chainlink CCIP, Wormhole |
-| Design | GlassUI (custom) |
-
-## Roadmap
-
-- [x] Project specification
-- [ ] Basic ERC-20 template
-- [ ] NFT template
-- [ ] Staking template
-- [ ] Cross-chain templates
-- [ ] GlassUI design system
-- [ ] AI integration
-- [ ] GitHub repo generation
-
-## Why This?
-
-| Problem | Solution |
-|---------|----------|
-| Setting up Web3 stack takes hours | One-click generation |
-| Cross-chain is hard to configure | Pre-configured templates |
-| Generic ugly UIs | GlassUI design system |
-| No docs for generated code | AI-powered documentation |
-
-## License
-
-MIT
+- Next.js 15 + React 19 + TypeScript
+- Wagmi v2 + Viem + RainbowKit
+- Foundry (contracts)
+- Tailwind CSS
