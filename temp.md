@@ -54,13 +54,12 @@ on the website, the combo
 ● Priority Order for Components:                                            
                                                                             
   Must-Have (critical for any dApp):                                        
-  1. Transaction Notifications - terrible UX without it        - in work              
-  2. Token Balance Display - basic feature in 90% of dApps      - done             
-  3. Network Mismatch Warning - prevents bugs/fund loss       - deprecated               
+  1. Transaction Notifications - terrible UX without it - done  
+  2. Token Balance Display - basic feature in 90% of dApps      - done                      
                                                                             
   High Priority (very common):                                              
-  4. Sign-In with Ethereum (SIWE) - authentication needed everywhere        - 100 %
-  5. NFT Minter - super popular               - 100%                               
+  4. Sign-In with Ethereum (SIWE) - authentication needed everywhere        - 100 % - done
+  5. NFT Minter - super popular               - 100%                      - done          
   6. Token Transfer Form - basic operation                                  
                                                                             
   Medium Priority (useful):                                                 
