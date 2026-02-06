@@ -1,9 +1,12 @@
-'use client'
+"use client";
+
+import { useTxHistory } from "@/hooks/useTxHistory";
 
 import { useAccount } from "wagmi";
 
 export default function Home() {
   const { address, isConnected } = useAccount();
+  const { transactions, isLoading, error } = useTxHistory();
 
   return (
     <main>
@@ -11,10 +14,16 @@ export default function Home() {
 
       {isConnected && address && (
         <div>
-          <p>Wallet: {address}</p>
-          {/* TX History will be here */}
+          {/* Добавляем проверку Array.isArray */}
+          {Array.isArray(transactions) ? (
+            transactions.map((tx) => (
+              <div key={tx.hash}>{tx.hash}</div> // Не забудьте отобразить данные
+            ))
+          ) : (
+            <p>No transactions found or loading...</p>
+          )}
         </div>
       )}
     </main>
-  )
+  );
 }
