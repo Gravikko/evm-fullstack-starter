@@ -1,5 +1,5 @@
 import  {useState, useEffect} from "react";
-import {useAccount} from "wagmi";
+import {useAccount, useChainId} from "wagmi"; 
  
 
 interface Transaction {
@@ -12,7 +12,8 @@ interface Transaction {
 
 
 export function useTxHistory() {
-    const { address } = useAccount(); 
+    const { address } = useAccount();
+    const chainId = useChainId(); 
 
     const [transactions, setTransactions] = useState<Transaction[]>([]);
     const [isLoading, setIsLoading] = useState(false);
@@ -23,16 +24,16 @@ export function useTxHistory() {
 
         setIsLoading(true);
 
-        fetch(`/api/transactions?address=${address}`)
+        fetch(`/api/transactions?address=${address}&chainId=${chainId}`) 
         .then((res) => res.json())
-        .then((data) => setTransactions(data.transactions))
+        .then((data) => setTransactions(data.transactions || []))
         .catch((err) => {
             setError(err.message);
         })
         .finally(() => {
             setIsLoading(false);
         });
-    }, [address])
+    }, [address, chainId])
 
     return {transactions, isLoading, error};
 
