@@ -2,8 +2,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 // import "./globals.css";
-import '@rainbow-me/rainbowkit/styles.css'; // 👈 1. Импорт стилей кошелька
-import { Providers } from "./providers";     // 👈 2. Импорт нашей обертки
+import '@rainbow-me/rainbowkit/styles.css';
+import { Providers } from "./providers";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 const inter = Inter({ subsets: ["latin"] });
