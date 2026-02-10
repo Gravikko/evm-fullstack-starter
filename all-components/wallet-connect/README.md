@@ -1,20 +1,19 @@
-# Wallet Connect Component
+# Wallet Connect
 
-Minimal RainbowKit + Wagmi integration.
+RainbowKit integration for connecting Web3 wallets.
 
-## Usage
+## What it does
+- Multi-wallet support (MetaMask, WalletConnect, Coinbase Wallet)
+- Connect/disconnect UI
+- Network switching
+- Account display
 
+## Setup
 ```bash
 npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000)
+Get WalletConnect Project ID: https://cloud.walletconnect.com
 
-## Setup
-
-Add your WalletConnect Project ID to `lib/config.ts`:
-
-```typescript
-projectId: "YOUR_PROJECT_ID", // Get from https://cloud.walletconnect.com
-```
+Update `lib/config.ts` with your project ID.

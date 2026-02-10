@@ -1,6 +1,6 @@
 {
-  "name": "component-name",
+  "name": "tx-notifications",
   "version": "1.0.0",
-  "dependencies": ["viem", "wagmi"],
-  "chains": ["ethereum", "arbitrum"]
+  "dependencies": ["viem", "wagmi", "react-hot-toast"],
+  "chains": ["ethereum", "sepolia"]
 }

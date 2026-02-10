@@ -1,0 +1,6 @@
+{
+  "name": "tx-history",
+  "version": "1.0.0",
+  "dependencies": ["viem", "wagmi"],
+  "chains": ["ethereum", "sepolia"]
+}

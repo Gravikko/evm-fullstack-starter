@@ -1,60 +1,18 @@
-# Component Template
+# Sign-In with Ethereum (SIWE)
 
-Minimal template for web3 components (LayerZero, Chainlink, NFTs, Bridges, etc.)
+Authentication via wallet signature.
 
-## Quick Start
+## What it does
+- Sign message with wallet (no gas fees)
+- Create server-side session (iron-session)
+- Secure authentication without passwords
+- Session persistence across page reloads
 
-```bash
-# 1. Copy template
-cp -r component-template/ my-component/
-cd my-component/
+## Setup
+Requires both frontend and API routes:
+- Frontend: `hooks/useSiwe.ts` handles signing
+- Backend: `app/api/auth/route.ts` verifies signature
 
-# 2. Delete what you don't need
-rm -rf contracts/   # if no smart contracts needed
-rm -rf frontend/    # if no frontend needed
+No smart contract needed.
 
-# 3. Run the frontend
-cd frontend/
-npm install
-npm run dev
-```
-
-## Structure
-
-```
-my-component/
-├── component.json      # Metadata
-├── .env.example        # Environment variables
-├── frontend/           # Next.js app (standalone)
-│   ├── src/
-│   │   ├── app/        # Pages
-│   │   ├── hooks/      # Your logic here
-│   │   └── lib/        # Contracts, utils
-│   └── package.json
-└── contracts/          # Foundry (standalone)
-    ├── src/            # Solidity contracts
-    ├── script/         # Deploy scripts
-    ├── test/           # Tests
-    └── foundry.toml
-```
-
-## Contracts
-
-```bash
-cd contracts/
-forge build
-forge test
-source ../.env
-forge script script/Deploy.s.sol --rpc-url $RPC_URL --broadcast
-```
-
-## Integration
-
-Copy hooks and components into your main project:
-
-```bash
-cp -r my-component/frontend/src/hooks/ your-project/src/
-cp -r my-component/frontend/src/lib/ your-project/src/
-```
-
-Or use as a standalone demo app.
+Uses `siwe` + `iron-session` packages.

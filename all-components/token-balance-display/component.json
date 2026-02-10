@@ -1,6 +1,6 @@
 {
-  "name": "component-name",
+  "name": "token-balance-display",
   "version": "1.0.0",
   "dependencies": ["viem", "wagmi"],
-  "chains": ["ethereum", "arbitrum"]
+  "chains": ["ethereum", "sepolia"]
 }

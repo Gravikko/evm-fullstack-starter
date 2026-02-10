@@ -1,60 +1,15 @@
-# Component Template
+# Token Transfer Form
 
-Minimal template for web3 components (LayerZero, Chainlink, NFTs, Bridges, etc.)
+Send ETH and ERC20 tokens with form validation.
 
-## Quick Start
+## What it does
+- Transfer ETH (native) or ERC20 tokens
+- Address validation
+- Balance checks
+- "Max" button for full balance
+- Transaction status feedback
 
-```bash
-# 1. Copy template
-cp -r component-template/ my-component/
-cd my-component/
+## Usage
+Hook: `useTokenTransfer()` handles ETH (`useSendTransaction`) and ERC20 (`useWriteContract`)
 
-# 2. Delete what you don't need
-rm -rf contracts/   # if no smart contracts needed
-rm -rf frontend/    # if no frontend needed
-
-# 3. Run the frontend
-cd frontend/
-npm install
-npm run dev
-```
-
-## Structure
-
-```
-my-component/
-├── component.json      # Metadata
-├── .env.example        # Environment variables
-├── frontend/           # Next.js app (standalone)
-│   ├── src/
-│   │   ├── app/        # Pages
-│   │   ├── hooks/      # Your logic here
-│   │   └── lib/        # Contracts, utils
-│   └── package.json
-└── contracts/          # Foundry (standalone)
-    ├── src/            # Solidity contracts
-    ├── script/         # Deploy scripts
-    ├── test/           # Tests
-    └── foundry.toml
-```
-
-## Contracts
-
-```bash
-cd contracts/
-forge build
-forge test
-source ../.env
-forge script script/Deploy.s.sol --rpc-url $RPC_URL --broadcast
-```
-
-## Integration
-
-Copy hooks and components into your main project:
-
-```bash
-cp -r my-component/frontend/src/hooks/ your-project/src/
-cp -r my-component/frontend/src/lib/ your-project/src/
-```
-
-Or use as a standalone demo app.
+Token list in `lib/tokens.ts` — add your tokens there.

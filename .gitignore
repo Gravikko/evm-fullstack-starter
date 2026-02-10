@@ -15,3 +15,13 @@
 **/.env.development.local
 **/.env.test.local
 **/.env.production.local
+
+# Internal docs (not for public repo)
+COMPONENTS_ROADMAP.md
+PROJECT_SPEC.md
+claude.md
+CLAUDE.md
+
+# Templates & temp
+component-template copy/
+temp/

@@ -1,6 +1,6 @@
 {
-  "name": "component-name",
+  "name": "nft-minter",
   "version": "1.0.0",
   "dependencies": ["viem", "wagmi"],
-  "chains": ["ethereum", "arbitrum"]
+  "chains": ["ethereum", "sepolia"]
 }

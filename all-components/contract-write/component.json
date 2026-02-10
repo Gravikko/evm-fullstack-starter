@@ -1,0 +1,6 @@
+{
+  "name": "contract-write",
+  "version": "1.0.0",
+  "dependencies": ["viem", "wagmi"],
+  "chains": ["ethereum", "arbitrum", "polygon"]
+}

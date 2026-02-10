@@ -22,7 +22,7 @@ export function useContractWrite() {
   useEffect(() => {
     if (writeError) {
       setError(writeError.message);
-      setIsPending(false);  // ✅ Сброс isPending при ошибке
+      setIsPending(false);
     }
   }, [writeError]);
   const executeFunction = async (
