@@ -1,5 +1,7 @@
 # EVM Fullstack Starter
 
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+
 Copy-paste Web3 components for building dApps fast. Each component is a standalone Next.js app — grab what you need, drop it in, and ship.
 
 ## Components
