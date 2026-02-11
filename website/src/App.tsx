@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Download, Layers, ChevronRight, Github, Code } from 'lucide-react'
+import { Download, Layers, ChevronRight, Github, Code, Mail} from 'lucide-react'
 
 function XIcon({ size = 18 }: { size?: number }) {
   return (
@@ -196,17 +196,20 @@ function App() {
                 <li><a href="https://github.com/gravikko/evm-fullstack-starter#readme" target="_blank" rel="noopener noreferrer" className="hover:text-indigo-600 transition-colors">Documentation</a></li>
               </ul>
             </div>
-            <div>
-              <h5 className="font-bold text-slate-900 mb-6">Connect</h5>
-              <div className="flex gap-4">
-                <a href="https://x.com/gravikko" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-slate-900 hover:text-white hover:border-transparent transition-all shadow-sm">
-                  <XIcon size={18} />
-                </a>
-                <a href="https://github.com/gravikko/evm-fullstack-starter" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-slate-900 hover:text-white hover:border-transparent transition-all shadow-sm">
-                  <Github size={18} />
-                </a>
-              </div>
-            </div>
+              <div>
+    <h5 className="font-bold text-slate-900 mb-6">Connect</h5>
+    <div className="flex gap-4">
+      <a href="https://x.com/gravikko" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-slate-900 hover:text-white hover:border-transparent transition-all shadow-sm">
+        <XIcon size={18} />
+      </a>
+      <a href="https://github.com/gravikko/evm-fullstack-starter" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-slate-900 hover:text-white hover:border-transparent transition-all shadow-sm">
+        <Github size={18} />
+      </a>
+      <a href="mailto:yar.averyanov@gmail.com" className="w-12 h-12 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-indigo-600 hover:text-white hover:border-transparent transition-all shadow-sm">
+        <Mail size={18} />
+      </a>
+    </div>
+  </div>
           </div>
           <div className="pt-10 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between text-sm text-slate-400">
             <p>&copy; 2026 Web3 Starter Kit. Open Source (MIT).</p>
